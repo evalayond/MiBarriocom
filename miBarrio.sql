@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema barrioDB
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema barrioDB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `barrioDB` DEFAULT CHARACTER SET utf8 ;
+USE `barrioDB` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuarios`
+-- Table `barrioDB`.`Usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`Usuarios` (
   `idUsuarios` INT NOT NULL AUTO_INCREMENT,
   `nombres` VARCHAR(45) NOT NULL,
   `apellidos` VARCHAR(45) NOT NULL,
@@ -38,9 +38,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Vendedores`
+-- Table `barrioDB`.`Vendedores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Vendedores` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`Vendedores` (
   `idVendedores` INT NOT NULL AUTO_INCREMENT,
   `idUsurioVendedor` INT NOT NULL,
   `usuario` VARCHAR(45) NOT NULL,
@@ -51,16 +51,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Vendedores` (
   INDEX `UsuarioVendedor_idx` (`idUsurioVendedor` ASC) VISIBLE,
   CONSTRAINT `UsuarioVendedor`
     FOREIGN KEY (`idUsurioVendedor`)
-    REFERENCES `mydb`.`Usuarios` (`idUsuarios`)
+    REFERENCES `barrioDB`.`Usuarios` (`idUsuarios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Productos`
+-- Table `barrioDB`.`Productos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Productos` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`Productos` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
   `nombreProducto` VARCHAR(45) NOT NULL,
   `categoria` VARCHAR(45) NOT NULL,
@@ -74,9 +74,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Ingresos`
+-- Table `barrioDB`.`Ingresos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Ingresos` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`Ingresos` (
   `idIngresos` INT NOT NULL AUTO_INCREMENT,
   `idProducto` INT NOT NULL,
   `cantidadIngresoProducto` DOUBLE NOT NULL,
@@ -89,21 +89,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Ingresos` (
   INDEX `ProveedorIngresos_idx` (`idUsuarios` ASC) VISIBLE,
   CONSTRAINT `IngresosProductos`
     FOREIGN KEY (`idProducto`)
-    REFERENCES `mydb`.`Productos` (`idProducto`)
+    REFERENCES `barrioDB`.`Productos` (`idProducto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `ProveedorIngresos`
     FOREIGN KEY (`idUsuarios`)
-    REFERENCES `mydb`.`Usuarios` (`idUsuarios`)
+    REFERENCES `barrioDB`.`Usuarios` (`idUsuarios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Egresos`
+-- Table `barrioDB`.`Egresos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Egresos` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`Egresos` (
   `idEgresos` INT NOT NULL AUTO_INCREMENT,
   `fechaVenta` DATE NOT NULL,
   `total` DOUBLE NOT NULL,
@@ -113,16 +113,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Egresos` (
   INDEX `VendedoresEgresos_idx` (`idVendedor` ASC) VISIBLE,
   CONSTRAINT `VendedoresEgresos`
     FOREIGN KEY (`idVendedor`)
-    REFERENCES `mydb`.`Vendedores` (`idVendedores`)
+    REFERENCES `barrioDB`.`Vendedores` (`idVendedores`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`EgresoProductos`
+-- Table `barrioDB`.`EgresoProductos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`EgresoProductos` (
+CREATE TABLE IF NOT EXISTS `barrioDB`.`EgresoProductos` (
   `idEgresoProductos` INT NOT NULL AUTO_INCREMENT,
   `idProductos` INT NOT NULL,
   `idEgresos` INT NOT NULL,
@@ -135,12 +135,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`EgresoProductos` (
   INDEX `ProductosEgreso_idx` (`idEgresos` ASC) VISIBLE,
   CONSTRAINT `EgresoProductos`
     FOREIGN KEY (`idProductos`)
-    REFERENCES `mydb`.`Productos` (`idProducto`)
+    REFERENCES `barrioDB`.`Productos` (`idProducto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `ProductosEgreso`
     FOREIGN KEY (`idEgresos`)
-    REFERENCES `mydb`.`Egresos` (`idEgresos`)
+    REFERENCES `barrioDB`.`Egresos` (`idEgresos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
