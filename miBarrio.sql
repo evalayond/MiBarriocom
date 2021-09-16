@@ -127,7 +127,7 @@ CREATE TABLE `productos` (
   `valorUnitarioVenta` double NOT NULL,
   PRIMARY KEY (`idProducto`),
   UNIQUE KEY `idProducto_UNIQUE` (`idProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Jabon fab en polvo x500','Aseo','und',1,13000,14300),(2,'Arroz x1000','viveres','kl',4,3000,3500),(3,'Crema dental x100','Aseo','ml',3,2000,2600),(4,'Shampoo x1000','Aseo','ml',2,11000,14000),(5,'Frijol x500','Viveres','ml',7,4000,5200),(6,'Panela x500','Viveres','gr',5,5000,5500);
+INSERT INTO `productos` VALUES (1,'Jabon fab en polvo x500','Aseo','und',1,13000,14300),(2,'Arroz x1000','viveres','kl',4,3000,3500),(3,'Crema dental x100','Aseo','ml',3,2000,2600),(4,'Shampoo x1000','Aseo','ml',2,11000,14000),(5,'Frijol x500','Viveres','ml',7,4000,5200),(6,'Panela x500','Viveres','gr',5,5000,5500),(7,'Aceite X500','Viveres','ml',6,4500,5800);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-15 21:47:59
+-- Dump completed on 2021-09-16  9:14:21
