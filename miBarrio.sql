@@ -90,13 +90,13 @@ CREATE TABLE `ingresos` (
   `cantidadIngresoProducto` double NOT NULL,
   `fechaIngreso` date NOT NULL,
   `costoUnitario` double NOT NULL,
-  `idUsuarioIngreso` int NOT NULL,
+  `idUsuarios` int NOT NULL,
   PRIMARY KEY (`idIngresos`),
   UNIQUE KEY `idIngresos_UNIQUE` (`idIngresos`),
   KEY `IngresosProductos_idx` (`idProducto`),
-  KEY `ProveedorIngresos_idx` (`idUsuarioIngreso`),
+  KEY `ProveedorIngresos_idx` (`idUsuarios`),
   CONSTRAINT `IngresosProductos` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`),
-  CONSTRAINT `ProveedorIngresos` FOREIGN KEY (`idUsuarioIngreso`) REFERENCES `usuarios` (`idUsuarios`)
+  CONSTRAINT `ProveedorIngresos` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuarios`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -213,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-17 14:15:43
+-- Dump completed on 2021-09-16  9:14:21
