@@ -15,7 +15,7 @@ rem See the License for the specific language governing permissions and
 rem limitations under the License.
 
 rem ---------------------------------------------------------------------------
-rem Configuration test script for the CATALINA Server
+rem Stop script for the CATALINA Server
 rem ---------------------------------------------------------------------------
 
 setlocal
@@ -53,6 +53,6 @@ shift
 goto setArgs
 :doneSetArgs
 
-call "%EXECUTABLE%" configtest %CMD_LINE_ARGS%
+call "%EXECUTABLE%" stop %CMD_LINE_ARGS%
 
 :end
