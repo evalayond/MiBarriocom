@@ -14,11 +14,9 @@ public class TOUsuarios {
     private String direccion;
     private String telefono;
     private String correo;
-    private Date fechaNaciomiento;
-    private String estadoCivil;
-    private String genero;
-
-    public TOUsuarios(int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rollUsuario, String direccion, String telefono, String correo, Date fechaNaciomiento, String estadoCivil, String genero) {
+    private int edad;
+   
+    public TOUsuarios(int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rollUsuario, String direccion, String telefono, String correo, int edad) {
         this.idUsuarios = idUsuarios;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -28,9 +26,7 @@ public class TOUsuarios {
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
-        this.fechaNaciomiento = fechaNaciomiento;
-        this.estadoCivil = estadoCivil;
-        this.genero = genero;
+        this.edad = edad;  
     }
 
     public TOUsuarios() {
@@ -72,18 +68,9 @@ public class TOUsuarios {
         return correo;
     }
 
-    public Date getFechaNaciomiento() {
-        return fechaNaciomiento;
+    public int getEdad() {
+        return edad;
     }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
     public void setIdUsuarios(int idUsuarios) {
         this.idUsuarios = idUsuarios;
     }
@@ -120,18 +107,7 @@ public class TOUsuarios {
         this.correo = correo;
     }
 
-    public void setFechaNaciomiento(Date fechaNaciomiento) {
-        this.fechaNaciomiento = fechaNaciomiento;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-    
-    
-    
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }  
 }
