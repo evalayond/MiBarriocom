@@ -1,18 +1,22 @@
 
 package to;
 
+import java.util.Date;
+
 public class TOVendedores {
    
    private int idVendedores;
    private int idUsuarioVendedor;
    private String usuario;
    private String clave;
+   private Date fechaLogin;
 
-    public TOVendedores(int idVendedores, int idUsuarioVendedor, String usuario, String clave) {
+    public TOVendedores(int idVendedores, int idUsuarioVendedor, String usuario, String clave, Date fechaLogin) {
         this.idVendedores = idVendedores;
         this.idUsuarioVendedor = idUsuarioVendedor;
         this.usuario = usuario;
         this.clave = clave;
+        this.fechaLogin = fechaLogin;
     }
 
     public TOVendedores() {
@@ -38,6 +42,9 @@ public class TOVendedores {
     public String getClave() {
         return clave;
     }
+    public Date getfechaLogin() {
+        return fechaLogin;
+    }
 
     public void setIdVendedores(int idVendedores) {
         this.idVendedores = idVendedores;
@@ -54,7 +61,8 @@ public class TOVendedores {
     public void setClave(String clave) {
         this.clave = clave;
     }
-   
-   
+    public void setFechaLogin(Date fechaLogin) {
+        this.fechaLogin = fechaLogin;
+    } 
     
 }
