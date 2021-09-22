@@ -42,7 +42,7 @@ public class TOVendedores {
     public String getClave() {
         return clave;
     }
-    public Date getfechaLogin() {
+    public Date getFechaLogin() {
         return fechaLogin;
     }
 
