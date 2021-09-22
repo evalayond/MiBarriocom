@@ -9,7 +9,7 @@ import to.TOUsuarios;
 public class DAOUsuarios {
 
     private ConexionDB con;
-    private final String nombreTabla = "usuarios";
+    private final String nombreTabla = "Usuarios";
     private final String[] columnas = {"nombres", "apellidos", "tipoDocumento", "identificacion", "rolUsuario", "direccion", "telefono", "correo", "edad"};
 
     public DAOUsuarios() {
