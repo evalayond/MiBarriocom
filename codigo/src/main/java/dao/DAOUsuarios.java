@@ -20,25 +20,47 @@ public class DAOUsuarios {
         }
     }
 
-    public int insentarUsuario(TOUsuarios TOUsuario) {
-        String[] valores = {TOUsuario.getNombres(), TOUsuario.getApellidos(), TOUsuario.getTipoDocumento(), TOUsuario.getIdentificacion(), TOUsuario.getRollUsuario(), TOUsuario.getDireccion(), TOUsuario.getCorreo(), TOUsuario.getEdad().toString()};
+    public boolean insentarUsuario(TOUsuarios TOUsuario) {
+        String[] valores = {
+            TOUsuario.getNombres(), 
+            TOUsuario.getApellidos(),
+            TOUsuario.getTipoDocumento(), 
+            TOUsuario.getIdentificacion(), 
+            TOUsuario.getRollUsuario(), TOUsuario.getDireccion(), 
+            TOUsuario.getCorreo(),
+            String.valueOf(TOUsuario.getEdad())
+        };
         try {
             con.insertar(nombreTabla, columnas, valores);
+            return true;
         } catch (Exception ex) {
             System.out.println("Error en DAOUsuarios.insentarUsuario: " + ex.getMessage());
-            return 0;
+            return false;
         }
+        
     }
 
     public boolean actualizarUsuario(TOUsuarios TOUsuario) {
-        String[] valores = {TOUsuario.getNombres(), TOUsuario.getApellidos(), TOUsuario.getTipoDocumento(), TOUsuario.getIdentificacion(), TOUsuario.getRollUsuario(), TOUsuario.getDireccion(), TOUsuario.getCorreo(), TOUsuario.getEdad().toString()};
+        String[] valores =
+        {
+            TOUsuario.getNombres(),
+            TOUsuario.getApellidos(),
+            TOUsuario.getTipoDocumento(),
+            TOUsuario.getIdentificacion(),
+            TOUsuario.getRollUsuario(),
+            TOUsuario.getDireccion(),
+            TOUsuario.getCorreo(),
+            String.valueOf(TOUsuario.getEdad())
+        };
+        
         try {
             con.actualizar(nombreTabla, columnas, valores, TOUsuario.getIdUsuarios());
+            return true;
         } catch (Exception ex) {
             System.out.println("Error en DAOUsuarios.actualizarUsuario: " + ex.getMessage());
             return false;
         }
-    
+    }
 
     public boolean eliminarUsuario(int idUsuario) {
         try {
