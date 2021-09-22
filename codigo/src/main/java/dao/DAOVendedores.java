@@ -18,7 +18,7 @@ import to.TOVendedores;
 public class DAOVendedores {
  
    private ConexionDB con;
-    private final String nombreTabla = "vendedores";
+    private final String nombreTabla = "Vendedores";
     private final String[] columnas = {"idUsurioVendedor","usuario","clave","fechaLogin"};
 
     public DAOVendedores() {
