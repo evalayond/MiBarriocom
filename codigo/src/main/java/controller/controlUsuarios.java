@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class controlUsuarios {
     DAOUsuarios UsuariosDAO = new DAOUsuarios();
     
-    public int insertUsuario(TOUsuarios TOUsuario){
+    public boolean insertUsuario(TOUsuarios TOUsuario){
         return UsuariosDAO.insentarUsuario(TOUsuario);
     }
     
