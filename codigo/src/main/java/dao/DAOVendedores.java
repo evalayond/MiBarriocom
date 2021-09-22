@@ -73,7 +73,7 @@ public class DAOVendedores {
         }
     }
 
-    public ArrayList<TOVendedores> listaVendedores(int idUsuario) {
+    public ArrayList<TOVendedores> listaVendedores(int idVendedores) {
         ArrayList<TOVendedores> vendedores = new ArrayList<>();
         TOVendedores vendedor;
         try {
