@@ -1,0 +1,5 @@
+dao\DAOEgresos.class
+dao\DAOIngresos.class
+dao\DAOVendedores.class
+dao\DAOProductos.class
+dao\DAOEgresoProductos.class
