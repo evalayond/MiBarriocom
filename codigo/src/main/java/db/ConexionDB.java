@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -101,7 +102,7 @@ public class ConexionDB {
             return false;
         }
     }
-
+    
     public ResultSet consultarTabla(String nombreTabla) {
 
         String query = "SELECT * FROM" + nombreTabla;
@@ -167,6 +168,7 @@ public class ConexionDB {
         StringBuilder query = new StringBuilder("UPDATE");
         query.append(nombreTabla);
         query.append("SET");
+
         for (int i = 0; i < columnas.length; i++) {
             query.append(columnas[i]);
             query.append(" = '");
