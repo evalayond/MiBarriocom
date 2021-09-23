@@ -20,7 +20,7 @@ public class DAOUsuarios {
         }
     }
 
-    public boolean insentarUsuario(TOUsuarios TOUsuario) {
+    public boolean insertarUsuario(TOUsuarios TOUsuario) {
         String[] valores = {
             TOUsuario.getNombres(), 
             TOUsuario.getApellidos(),
@@ -71,7 +71,7 @@ public class DAOUsuarios {
         }
     }
 
-    public ArrayList<TOUsuarios> listaUsuarios(int idUsuario) {
+    public ArrayList<TOUsuarios> listaUsuarios() {
         ArrayList<TOUsuarios> usuarios = new ArrayList<>();
         TOUsuarios usuario;
         try {
