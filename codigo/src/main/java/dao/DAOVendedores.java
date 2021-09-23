@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dao;
 
 import db.ConexionDB;
@@ -11,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import to.TOVendedores;
 
-/**
- *
- * @author María
- */
+
 public class DAOVendedores {
  
    private ConexionDB con;
@@ -29,7 +22,7 @@ public class DAOVendedores {
         }
     }
 
-    public boolean insentarVendedor(TOVendedores TOVendedor) {
+    public boolean insertarVendedor(TOVendedores TOVendedor) {
         String[] valores = {
             String.valueOf(TOVendedor.getIdUsuarioVendedor()), 
             TOVendedor.getUsuario(),
@@ -47,7 +40,7 @@ public class DAOVendedores {
         
     }
 
-    public boolean actualizarUsuario(TOVendedores TOVendedor) {
+    public boolean actualizarVendedor(TOVendedores TOVendedor) {
         String[] valores ={
             String.valueOf(TOVendedor.getIdUsuarioVendedor()), 
             TOVendedor.getUsuario(),
@@ -73,7 +66,7 @@ public class DAOVendedores {
         }
     }
 
-    public ArrayList<TOVendedores> listaVendedores(int idVendedores) {
+    public ArrayList<TOVendedores> listaVendedores() {
         ArrayList<TOVendedores> vendedores = new ArrayList<>();
         TOVendedores vendedor;
         try {
