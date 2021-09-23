@@ -22,7 +22,7 @@ public class DAOIngresos {
         }
     }
 
-    public boolean insentarProducto(TOIngresos TOIngresos) {
+    public boolean insertarIngreso(TOIngresos TOIngresos) {
         String[] valores = { 
             String.valueOf(TOIngresos.getIdProducto()),
             String.valueOf (TOIngresos.getCantidadIngresoProducto()),
@@ -36,7 +36,7 @@ public class DAOIngresos {
             con.insertar(nombreTabla, columnas, valores);
             return true;
         } catch (Exception ex) {
-            System.out.println("Error en DAOProductos.insentarProducto: " + ex.getMessage());
+            System.out.println("Error en DAOIngresos.insentarIngreso: " + ex.getMessage());
             return false;
         }
         
@@ -69,7 +69,7 @@ public class DAOIngresos {
         }
     }
 
-    public ArrayList<TOIngresos> listaIngresos(int idIngresos) {
+    public ArrayList<TOIngresos> listaIngresos() {
         ArrayList<TOIngresos> ingresos = new ArrayList<>();
         TOIngresos ingreso;
         try {
