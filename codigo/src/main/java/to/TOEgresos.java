@@ -20,7 +20,7 @@ public class TOEgresos {
 
     public TOEgresos() {
     }
-
+    
     public int getIdEgresos() {
         return idEgresos;
     }
