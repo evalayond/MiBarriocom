@@ -28,7 +28,7 @@ public class DAOEgresoProductos {
         }
     }
 
-    public boolean insentarEgresoProductos(TOEgresoProductos TOEgresoProducto) {
+    public boolean insertarEgresoProductos(TOEgresoProductos TOEgresoProducto) {
         String[] valores = { 
             String.valueOf(TOEgresoProducto.getIdProductos()),
             String.valueOf(TOEgresoProducto.getIdEgresos()),
@@ -74,7 +74,7 @@ public class DAOEgresoProductos {
         }
     }
 
-    public ArrayList<TOEgresoProductos> listaEgresosProductos(int IdEgresoProductos) {
+    public ArrayList<TOEgresoProductos> listaEgresoProductos() {
         ArrayList<TOEgresoProductos> egresosProductos = new ArrayList<>();
         TOEgresoProductos EgresosProducto;
         try {
@@ -92,10 +92,10 @@ public class DAOEgresoProductos {
             }
             return egresosProductos;
         } catch (SQLException ex) {
-            System.out.println("Error en DAOEgresoProducto.consultarTabla: " + ex.getMessage());
+            System.out.println("Error en DAOEgresoProductos.consultarTabla: " + ex.getMessage());
             return null;
         } catch (Exception ex) {
-            System.out.println("Error en DAOEgresoProducto.consultarTabla: " + ex.getMessage());
+            System.out.println("Error en DAOEgresoProductos.consultarTabla: " + ex.getMessage());
             return null;
         }
     }
