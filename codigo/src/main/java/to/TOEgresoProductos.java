@@ -5,15 +5,15 @@ package to;
 public class TOEgresoProductos {
     
     
-    private int idEgresosProductos;
+    private int idEgresoProductos;
     private int idProductos;
     private int idEgresos;
     private Double cantidadVendida;
     private Double precioCompra;
     private Double precioVenta;
 
-    public TOEgresoProductos(int idEgresosProductos, int idProductos, int idEgresos, Double cantidadVendida, Double precioCompra, Double precioVenta) {
-        this.idEgresosProductos = idEgresosProductos;
+    public TOEgresoProductos(int idEgresoProductos, int idProductos, int idEgresos, Double cantidadVendida, Double precioCompra, Double precioVenta) {
+        this.idEgresoProductos = idEgresoProductos;
         this.idProductos = idProductos;
         this.idEgresos = idEgresos;
         this.cantidadVendida = cantidadVendida;
@@ -24,8 +24,8 @@ public class TOEgresoProductos {
     public TOEgresoProductos() {
     }
 
-    public int getIdEgresosProductos() {
-        return idEgresosProductos;
+    public int getIdEgresoProductos() {
+        return idEgresoProductos;
     }
 
     public int getIdProductos() {
@@ -48,8 +48,8 @@ public class TOEgresoProductos {
         return precioVenta;
     }
 
-    public void setIdEgresosProductos(int idEgresosProductos) {
-        this.idEgresosProductos = idEgresosProductos;
+    public void setIdEgresoProductos(int idEgresoProductos) {
+        this.idEgresoProductos = idEgresoProductos;
     }
 
     public void setIdProductos(int idProductos) {
@@ -71,7 +71,4 @@ public class TOEgresoProductos {
     public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
-    
-    
-    
 }
