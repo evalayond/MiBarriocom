@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +22,7 @@ public class ConexionDB {
 
     public ConexionDB() {
 
-        DB_driver = "com.mysql.jdbc.driver";
+        DB_driver = "com.mysql.jdbc.Driver";
         host = "localhost:3306";
         db = "barriodb";
         url = "jdbc:mysql://" + host + "/" + db;
@@ -102,10 +101,10 @@ public class ConexionDB {
             return false;
         }
     }
-    
+
     public ResultSet consultarTabla(String nombreTabla) {
 
-        String query = "SELECT * FROM" + nombreTabla;
+        String query = "SELECT * FROM " + nombreTabla;
         try {
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = stmt.executeQuery(query);
@@ -168,7 +167,6 @@ public class ConexionDB {
         StringBuilder query = new StringBuilder("UPDATE");
         query.append(nombreTabla);
         query.append("SET");
-
         for (int i = 0; i < columnas.length; i++) {
             query.append(columnas[i]);
             query.append(" = '");
