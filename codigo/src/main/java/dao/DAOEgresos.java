@@ -28,7 +28,7 @@ public class DAOEgresos {
         }
     }
 
-    public boolean insentarEgreso(TOEgresos TOEgreso) {
+    public boolean insertarEgreso(TOEgresos TOEgreso) {
         String[] valores = { 
             TOEgreso.getFechaVenta().toString(),
             String.valueOf(TOEgreso.getTotal()),
@@ -70,7 +70,7 @@ public class DAOEgresos {
         }
     }
 
-    public ArrayList<TOEgresos> listaEgresos(int idEgresos) {
+    public ArrayList<TOEgresos> listaEgresos() {
         ArrayList<TOEgresos> egresos = new ArrayList<>();
         TOEgresos egreso;
         try {
