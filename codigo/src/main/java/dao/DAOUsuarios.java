@@ -26,7 +26,8 @@ public class DAOUsuarios {
             TOUsuario.getApellidos(),
             TOUsuario.getTipoDocumento(), 
             TOUsuario.getIdentificacion(), 
-            TOUsuario.getRollUsuario(), TOUsuario.getDireccion(), 
+            TOUsuario.getRollUsuario(), 
+            TOUsuario.getDireccion(), 
             TOUsuario.getCorreo(),
             String.valueOf(TOUsuario.getEdad())
         };
