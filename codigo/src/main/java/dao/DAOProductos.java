@@ -22,7 +22,7 @@ public class DAOProductos {
         }
     }
 
-    public boolean insentarProducto(TOProductos TOProducto) {
+    public boolean insertarProducto(TOProductos TOProducto) {
         String[] valores = { 
             TOProducto.getNombreProducto(),
             TOProducto.getCategoria(),
@@ -61,16 +61,16 @@ public class DAOProductos {
         }
     }
 
-    public boolean eliminarVendedor(int idUsuario) {
+    public boolean eliminarProducto(int idUsuario) {
         try {
             return con.borrar(nombreTabla, idUsuario);
         } catch (Exception ex) {
-            System.out.println("Error en DAOVendedores .eliminarVendedor : " + ex.getMessage());
+            System.out.println("Error en DAOProductos.eliminarProducto : " + ex.getMessage());
             return false;
         }
     }
 
-    public ArrayList<TOProductos> listaProductos(int idProducto) {
+    public ArrayList<TOProductos> listaProductos() {
         ArrayList<TOProductos> productos = new ArrayList<>();
         TOProductos producto;
         try {
