@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,7 +25,7 @@ public class ConexionDB {
 
         DB_driver = "com.mysql.jdbc.driver";
         host = "localhost:3306";
-        db = "s28";
+        db = "barriodb";
         url = "jdbc:mysql://" + host + "/" + db;
         username = "root";
         password = "root";
