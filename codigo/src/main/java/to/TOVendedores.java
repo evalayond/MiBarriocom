@@ -3,22 +3,23 @@ package to;
 
 import java.util.Date;
 
-public class TOVendedores {
+public class TOVendedores extends TOUsuarios{
    
    private int idVendedores;
    private int idUsuarioVendedor;
    private String usuario;
    private String clave;
-   private Date fechaLogin;
+   
 
-    public TOVendedores(int idVendedores, int idUsuarioVendedor, String usuario, String clave, Date fechaLogin) {
+    public TOVendedores(int idVendedores, int idUsuarioVendedor, String usuario, String clave, Date fechaLogin, int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rolUsuario, String direccion, String telefono, String correo, int edad) {
+        super(idUsuarios, nombres, apellidos, tipoDocumento, identificacion, rolUsuario, direccion, telefono, correo, edad);
         this.idVendedores = idVendedores;
         this.idUsuarioVendedor = idUsuarioVendedor;
         this.usuario = usuario;
         this.clave = clave;
-        this.fechaLogin = fechaLogin;
+        
     }
-
+    
     public TOVendedores() {
     }
 
@@ -42,9 +43,6 @@ public class TOVendedores {
     public String getClave() {
         return clave;
     }
-    public Date getFechaLogin() {
-        return fechaLogin;
-    }
 
     public void setIdVendedores(int idVendedores) {
         this.idVendedores = idVendedores;
@@ -61,8 +59,5 @@ public class TOVendedores {
     public void setClave(String clave) {
         this.clave = clave;
     }
-    public void setFechaLogin(Date fechaLogin) {
-        this.fechaLogin = fechaLogin;
-    } 
     
 }
