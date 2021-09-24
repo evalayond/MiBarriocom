@@ -10,19 +10,19 @@ public class TOUsuarios {
     private String apellidos;
     private String tipoDocumento;
     private String identificacion;
-    private String rollUsuario;
+    private String rolUsuario;
     private String direccion;
     private String telefono;
     private String correo;
     private int edad;
    
-    public TOUsuarios(int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rollUsuario, String direccion, String telefono, String correo, int edad) {
+    public TOUsuarios(int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rolUsuario, String direccion, String telefono, String correo, int edad) {
         this.idUsuarios = idUsuarios;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.tipoDocumento = tipoDocumento;
         this.identificacion = identificacion;
-        this.rollUsuario = rollUsuario;
+        this.rolUsuario = rolUsuario;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
@@ -52,8 +52,8 @@ public class TOUsuarios {
         return identificacion;
     }
 
-    public String getRollUsuario() {
-        return rollUsuario;
+    public String getRolUsuario() {
+        return rolUsuario;
     }
 
     public String getDireccion() {
@@ -91,8 +91,8 @@ public class TOUsuarios {
         this.identificacion = identificacion;
     }
 
-    public void setRollUsuario(String rollUsuario) {
-        this.rollUsuario = rollUsuario;
+    public void setRolUsuario(String rolUsuario) {
+        this.rolUsuario = rolUsuario;
     }
 
     public void setDireccion(String direccion) {
