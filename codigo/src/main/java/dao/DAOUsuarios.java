@@ -26,7 +26,7 @@ public class DAOUsuarios {
             TOUsuario.getApellidos(),
             TOUsuario.getTipoDocumento(), 
             TOUsuario.getIdentificacion(), 
-            TOUsuario.getRollUsuario(), 
+            TOUsuario.getRolUsuario(), 
             TOUsuario.getDireccion(), 
             TOUsuario.getCorreo(),
             String.valueOf(TOUsuario.getEdad())
@@ -48,7 +48,7 @@ public class DAOUsuarios {
             TOUsuario.getApellidos(),
             TOUsuario.getTipoDocumento(),
             TOUsuario.getIdentificacion(),
-            TOUsuario.getRollUsuario(),
+            TOUsuario.getRolUsuario(),
             TOUsuario.getDireccion(),
             TOUsuario.getCorreo(),
             String.valueOf(TOUsuario.getEdad())
@@ -83,7 +83,7 @@ public class DAOUsuarios {
                 usuario.setApellidos(rs.getString("apellidos"));
                 usuario.setTipoDocumento(rs.getString("tipoDocumento"));
                 usuario.setIdentificacion(rs.getString("identificacion"));
-                usuario.setRollUsuario(rs.getString("rolUsuario"));
+                usuario.setRolUsuario(rs.getString("rolUsuario"));
                 usuario.setDireccion(rs.getString("direccion"));
                 usuario.setTelefono(rs.getString("telefono"));
                 usuario.setCorreo(rs.getString("correo"));
