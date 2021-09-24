@@ -17,8 +17,8 @@ public class controlVendedores {
         return VendedoresDAO.actualizarVendedor(TOVendedor);
     }
     
-    public boolean eliminarUsuario(int idUsuario){
-        return VendedoresDAO.eliminarVendedor(idUsuario);
+    public boolean eliminarVendedor(int idVendedores){
+        return VendedoresDAO.eliminarVendedor(idVendedores);
     }
     
     public ArrayList<TOVendedores> listaVendedores(){
