@@ -11,8 +11,8 @@ import to.TOVendedores;
 public class DAOVendedores {
  
    private ConexionDB con;
-    private final String nombreTabla = "Vendedores";
-    private final String[] columnas = {"idUsurioVendedor","usuario","clave","fechaLogin"};
+    private final String nombreTabla = "vendedores";
+    private final String[] columnas = {"idUsurioVendedor","usuario","clave"};
 
     public DAOVendedores() {
         try {
@@ -27,14 +27,13 @@ public class DAOVendedores {
             String.valueOf(TOVendedor.getIdUsuarioVendedor()), 
             TOVendedor.getUsuario(),
             TOVendedor.getClave(), 
-            TOVendedor.getFechaLogin().toString(), 
             
         };
         try {
             con.insertar(nombreTabla, columnas, valores);
             return true;
         } catch (Exception ex) {
-            System.out.println("Error en DAOUsuarios.insentarUsuario: " + ex.getMessage());
+            System.out.println("Error en DAOVendedores.insentarUsuario: " + ex.getMessage());
             return false;
         }
         
@@ -45,21 +44,21 @@ public class DAOVendedores {
             String.valueOf(TOVendedor.getIdUsuarioVendedor()), 
             TOVendedor.getUsuario(),
             TOVendedor.getClave(), 
-            TOVendedor.getFechaLogin().toString(),
+            
         };
         
         try {
             con.actualizar(nombreTabla, columnas, valores, TOVendedor.getIdVendedores());
             return true;
         } catch (Exception ex) {
-            System.out.println("Error en DAOUsuarios.actualizarUsuario: " + ex.getMessage());
+            System.out.println("Error en DAOVendedores.actualizarVendedor: " + ex.getMessage());
             return false;
         }
     }
 
-    public boolean eliminarVendedor(int idUsuario) {
+    public boolean eliminarVendedor(int idVendedor) {
         try {
-            return con.borrar(nombreTabla, idUsuario);
+            return con.borrar(nombreTabla, idVendedor);
         } catch (Exception ex) {
             System.out.println("Error en DAOVendedores .eliminarVendedor : " + ex.getMessage());
             return false;
@@ -76,7 +75,16 @@ public class DAOVendedores {
                 vendedor.setIdUsuarioVendedor(rs.getInt("idUsurioVendedor"));
                 vendedor.setUsuario(rs.getString("usuario"));
                 vendedor.setClave(rs.getString("clave"));
-                vendedor.setFechaLogin(rs.getDate("fechaLogin"));
+                 
+                vendedor.setNombres(rs.getString("nombres"));
+                vendedor.setApellidos(rs.getString("apellidos"));
+                vendedor.setTipoDocumento(rs.getString("tipoDocumento"));
+                vendedor.setIdentificacion(rs.getString("identificacion"));
+                vendedor.setRolUsuario(rs.getString("rolUsuario"));
+                vendedor.setDireccion(rs.getString("direccion"));
+                vendedor.setTelefono(rs.getString("telefono"));
+                vendedor.setCorreo(rs.getString("correo"));
+                vendedor.setEdad(rs.getInt("edad"));
                 
                 vendedores.add(vendedor);
             }
