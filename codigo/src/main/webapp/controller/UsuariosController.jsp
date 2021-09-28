@@ -10,6 +10,8 @@ if("listar".equals(opcion)){
     }else if("insertar".equals(opcion)){
     
     }else if("actualizar".equals(opcion)){
+    
+    
     }else if("eliminar".equals(opcion)){
     }else{
         out.println("Esta opción no esta disponible");
