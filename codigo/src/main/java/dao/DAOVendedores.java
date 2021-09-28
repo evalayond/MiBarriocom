@@ -57,9 +57,9 @@ public class DAOVendedores {
         }
     }
 
-    public boolean eliminarVendedor(int idVendedor) {
+    public boolean eliminarVendedor(int idVendedores) {
         try {
-            return con.borrar(nombreTabla, idVendedor);
+            return con.borrar(nombreTabla, idVendedores);
         } catch (Exception ex) {
             System.out.println("Error en DAOVendedores .eliminarVendedor : " + ex.getMessage());
             return false;
