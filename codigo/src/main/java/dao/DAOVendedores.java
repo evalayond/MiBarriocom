@@ -10,9 +10,10 @@ import to.TOVendedores;
 
 public class DAOVendedores {
  
-   private ConexionDB con;
+    private ConexionDB con;
     private final String nombreTabla = "vendedores";
     private final String[] columnas = {"idUsurioVendedor","usuario","clave"};
+    private  final String vistaTabla = "vistavendedores";
 
     public DAOVendedores() {
         try {
@@ -69,13 +70,14 @@ public class DAOVendedores {
         ArrayList<TOVendedores> vendedores = new ArrayList<>();
         TOVendedores vendedor;
         try {
-            ResultSet rs = con.consultarTabla(nombreTabla);
+            
+            ResultSet rs = con.consultarTabla(vistaTabla);
             while (rs.next()) {
                 vendedor = new TOVendedores();
                 vendedor.setIdUsuarioVendedor(rs.getInt("idUsurioVendedor"));
                 vendedor.setUsuario(rs.getString("usuario"));
                 vendedor.setClave(rs.getString("clave"));
-                 
+                vendedor.setIdUsuarios(rs.getInt("idUsuarios"));
                 vendedor.setNombres(rs.getString("nombres"));
                 vendedor.setApellidos(rs.getString("apellidos"));
                 vendedor.setTipoDocumento(rs.getString("tipoDocumento"));
