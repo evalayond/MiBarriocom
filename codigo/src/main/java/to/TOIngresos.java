@@ -3,7 +3,7 @@ package to;
 
 import java.util.Date;
 
-public class TOIngresos {
+public class TOIngresos extends TOUsuarios{
     
     private int idIngresos;
     private int idProducto;
@@ -12,7 +12,8 @@ public class TOIngresos {
     private Double costoUnitario;
     private int idUsuarios;
 
-    public TOIngresos(int idIngresos, int idProducto, Double cantidadIngresoProducto, Date fechaIngreso, Double costoUnitario, int idUsuarios) {
+    public TOIngresos(int idIngresos, int idProducto, Double cantidadIngresoProducto, Date fechaIngreso, Double costoUnitario, int idUsuarios, String nombres, String apellidos, String tipoDocumento, String identificacion, String rolUsuario, String direccion, String telefono, String correo, int edad) {
+        super(idUsuarios, nombres, apellidos, tipoDocumento, identificacion, rolUsuario, direccion, telefono, correo, edad);
         this.idIngresos = idIngresos;
         this.idProducto = idProducto;
         this.cantidadIngresoProducto = cantidadIngresoProducto;
