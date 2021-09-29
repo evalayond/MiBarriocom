@@ -226,4 +226,23 @@ public class ConexionDB {
 
     }
 
+    public ResultSet login(String usuario, String clave) {
+
+        String query = "SELECT * FROM vendedores WHERE usuario = '" + usuario + "' AND clave = '" + clave + "';" ;
+        try {
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            rs = stmt.executeQuery(query);
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } catch (RuntimeException ex) {
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } catch (Exception ex) {
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
 }
