@@ -1,21 +1,12 @@
-<%@page import="to.TOUsuarios"%>
+<%@page import="to.TOLogin"%>
+<%@page import="to.TOVendedores"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.google.gson.Gson"%>
-<%@page import="controller.controlUsuarios"%>
-<% controlUsuarios controladorUsuarios = new controlUsuarios();
-String opcion = request.getParameter("opcion");
-if("listar".equals(opcion)){
-    ArrayList<TOUsuarios> usuarios = controladorUsuarios.listaUsuarios();
-        out.print(new Gson().toJson(usuarios));
-    }else if("insertar".equals(opcion)){
-    
-    }else if("actualizar".equals(opcion)){
-    
-    
-    }else if("eliminar".equals(opcion)){
-    }else{
-        out.println("Esta opción no esta disponible");
-    }
-    
+<%@page import="controller.controlLogin"%>
+<% controlLogin controladorLogin = new controlLogin();
+    String usuario = request.getParameter("usuario");
+    String clave = request.getParameter("clave");
+    TOVendedores vendedor = controladorLogin.login(usuario, clave);
+    out.print(new Gson().toJson(vendedor));
 %>
 
