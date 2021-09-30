@@ -99,6 +99,37 @@ public class DAOVendedores {
             return null;
         }
     }
+
+    public TOVendedores login(String usuario, String clave) {
+        TOVendedores vendedor;
+        vendedor = null;
+        try {
+            ResultSet rs = con.login(usuario, clave);
+            while (rs.next()) {
+                vendedor = new TOVendedores();
+                vendedor.setIdUsuarioVendedor(rs.getInt("idUsurioVendedor"));
+                vendedor.setUsuario(rs.getString("usuario"));
+                vendedor.setClave(rs.getString("clave"));
+                vendedor.setIdUsuarios(rs.getInt("idUsuarios"));
+                vendedor.setNombres(rs.getString("nombres"));
+                vendedor.setApellidos(rs.getString("apellidos"));
+                vendedor.setTipoDocumento(rs.getString("tipoDocumento"));
+                vendedor.setIdentificacion(rs.getString("identificacion"));
+                vendedor.setRolUsuario(rs.getString("rolUsuario"));
+                vendedor.setDireccion(rs.getString("direccion"));
+                vendedor.setTelefono(rs.getString("telefono"));
+                vendedor.setCorreo(rs.getString("correo"));
+                vendedor.setEdad(rs.getInt("edad"));           
+            }
+            return vendedor;
+        } catch (SQLException ex) {
+            System.out.println("Error en DAOVendedores.consultarTabla: " + ex.getMessage());
+            return null;
+        } catch (Exception ex) {
+            System.out.println("Error en DAOVendedores.consultarTabla: " + ex.getMessage());
+            return null;
+        }
+    }
 }
 
    
